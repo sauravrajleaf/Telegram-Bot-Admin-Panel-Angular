@@ -1,13 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AdminPanelFrontend</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>AdminPanelFrontend</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "38861619212-ofhm58i3nr7ps19fq1m0s697amodfpb3.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+        });
+
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      };
+      function decodeJWTToken(token) {
+        return JSON.parse(atob(token.split(".")[1]));
+      }
+      function handleCredentialResponse(response) {
+        // to decode the credential response.
+        const responsePayload = decodeJWTToken(response.credential);
+        sessionStorage.setItem("loggedInUser", JSON.stringify(responsePayload));
+        window.location.href = "/dashboard";
+      }
+      function handleSignout() {
+        google.accounts.id.disableAutoSelect();
+      }
+    </script>
+    <app-root></app-root>
+  </body>
 </html>

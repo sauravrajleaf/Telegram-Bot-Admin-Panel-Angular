@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { GoogleAuth } from './google-auth.module';
+// import { GoogleAuthService } from './google-auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, DashboardComponent, UserCardComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  // providers: [GoogleAuthService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
