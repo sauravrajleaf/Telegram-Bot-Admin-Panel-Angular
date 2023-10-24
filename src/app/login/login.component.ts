@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { EnvironmentService } from '../environment.service';
+// import { EnvironmentService } from '../environment.service';
 // import { GoogleAuthService } from '../google-auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -16,7 +16,7 @@ declare var google: any;
 export class LoginComponent {
   constructor(
     // private googleAuthService: GoogleAuthService,
-    private environmentService: EnvironmentService,
+    // private environmentService: EnvironmentService,
     private route: ActivatedRoute,
     private router: Router,
     private cookieService: CookieService,
