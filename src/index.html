@@ -10,27 +10,29 @@
   </head>
   <body>
     <script>
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id:
-            "38861619212-ofhm58i3nr7ps19fq1m0s697amodfpb3.apps.googleusercontent.com",
-          callback: handleCredentialResponse,
-        });
+      // window.onload = function () {
+      //   google.accounts.id.initialize({
+      //     client_id:
+      //       "",
+      //   });
 
-        google.accounts.id.prompt(); // also display the One Tap dialog
-      };
-      function decodeJWTToken(token) {
-        return JSON.parse(atob(token.split(".")[1]));
-      }
-      function handleCredentialResponse(response) {
-        // to decode the credential response.
-        const responsePayload = decodeJWTToken(response.credential);
-        sessionStorage.setItem("loggedInUser", JSON.stringify(responsePayload));
-        window.location.href = "/dashboard";
-      }
-      function handleSignout() {
-        google.accounts.id.disableAutoSelect();
-      }
+      //   google.accounts.id.prompt(); // also display the One Tap dialog
+      // };
+      // function decodeJWTToken(token) {
+      //   return JSON.parse(atob(token.split(".")[1]));
+      // }
+      // function handleCredentialResponse(response) {
+      //   // to decode the credential response.
+      //   const responsePayload = decodeJWTToken(response.credential);
+
+      //   console.log("response", responsePayload);
+      //   sessionStorage.setItem("loggedInUser", JSON.stringify(responsePayload));
+
+      //   window.location.href = "/dashboard";
+      // }
+      // function handleSignout() {
+      //   google.accounts.id.disableAutoSelect();
+      // }
     </script>
     <app-root></app-root>
   </body>

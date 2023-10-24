@@ -1,3 +1,21 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GoogleAuthService {
+  private googleClientId = '';
+  private backendApiUrl = 'http://localhost:3000/auth/login';
+
+  constructor(private http: HttpClient) {}
+
+  // authenticate(idToken: string) {
+  //   console.log('i am in google service authenticate');
+  //   return this.http.post(this.backendApiUrl, { idToken });
+  // }
+}
+
 // import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 // import { Router } from '@angular/router';
