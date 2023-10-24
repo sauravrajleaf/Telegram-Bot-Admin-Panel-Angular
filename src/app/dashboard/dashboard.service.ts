@@ -6,7 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DashboardService {
-  private apiUrl = 'http://localhost:3000/user/getUser'; // Backend API URL
+  private apiUrl =
+    'https://daily-weather-telegram-bot-production.up.railway.app/user/getUser'; // Backend API URL
 
   constructor(private http: HttpClient) {}
 

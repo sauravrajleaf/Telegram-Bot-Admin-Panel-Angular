@@ -16,7 +16,8 @@ export class GoogleAuthService {
 
   constructor(private http: HttpClient) {}
 
-  private apiUrl = 'http://localhost:3000/auth/authenticated-user'; // Adjust the API endpoint
+  private apiUrl =
+    'https://daily-weather-telegram-bot-production.up.railway.app/auth/authenticated-user'; // Adjust the API endpoint
 
   private userProfile: any; // Private variable to store user data
   private userProfileKey = 'userProfile';
