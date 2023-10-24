@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,11 +8,10 @@ import { AppComponent } from './app.component';
 // import { GoogleAuth } from './google-auth.module';
 // import { GoogleAuthService } from './google-auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserCardComponent } from './user-card/user-card.component';
-
+import { AuthResolverComponent } from './auth-resolver/auth-resolver.component';
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, UserCardComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, AuthResolverComponent, DashboardComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
   // providers: [GoogleAuthService],
   bootstrap: [AppComponent],
 })

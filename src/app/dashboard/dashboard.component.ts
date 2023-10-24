@@ -11,9 +11,9 @@ declare var handleSignout: any;
 export class DashboardComponent {
   constructor(private router: Router) {}
   userProfile: any;
-  ngOnInit() {
-    this.userProfile = JSON.parse(sessionStorage.getItem('loggedInUser') || '');
-  }
+  // ngOnInit() {
+  //   this.userProfile = JSON.parse(sessionStorage.getItem('loggedInUser') || '');
+  // }
   handleSignOut() {
     handleSignout();
     sessionStorage.removeItem('loggedInUser');
