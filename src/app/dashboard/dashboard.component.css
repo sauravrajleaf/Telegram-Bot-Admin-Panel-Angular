@@ -1,7 +1,9 @@
+
 .content {
   margin-top: 50px;
   text-align: center;
   padding: 20px;
+  /* background-color: gray; */
 }
 
 .mat-toolbar {
@@ -14,14 +16,14 @@
   padding: 0 16px;
 }
 
-.spacer {
-  flex: 1; /* Takes up remaining space, pushing buttons to the right */
-}
+/* .spacer {
+  flex: 1;
+} */
 
 .mat-toolbar button {
   color: white;
   font-size: 16px;
-  margin-left: 16px; /* Add margin between buttons */
+  margin-left: 16px;
   transition: color 0.3s ease;
 }
 
@@ -29,4 +31,48 @@
   color: #FFC107;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.user-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* background-color: aqua; */
+}
+
+mat-card {
+  width: 300px;
+  /* background-color: bisque; */
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.user-details {
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 200px; /* Adjust the width based on your preference */
+ 
+  /* background-color: red; */
+  text-align: center;
+}
+
+.action-icon {
+  cursor: pointer;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  /* background-color: #FFC107; */
+  padding: 40px;
+  /* margin-right: 20px; */
+}
+
+
+.action-icon:hover {
+  color: #FFC107;
 }
