@@ -30,9 +30,9 @@ export class LoginComponent {
     // console.log('userProfile in login', this.userProfile);
   }
 
-  googleClientId(): string {
-    return this.environmentService.googleClientId;
-  }
+  // googleClientId(): string {
+  //   return this.environmentService.googleClientId;
+  // }
 
   // handleCredentialResponse(response: any) {
   //   const idToken = response.credential;
