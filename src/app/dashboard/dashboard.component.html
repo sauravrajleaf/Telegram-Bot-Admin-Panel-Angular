@@ -1,7 +1,15 @@
-<h2>User logged in successfully</h2>
-<br />
-<p>dashboard works!</p>
-<ng-container *ngIf="userProfile">
-  <div>Welcome, {{ userProfile.name }}</div>
-</ng-container>
-<button id="signout-button" (click)="handleSignOut()">Sign Out</button>
+<mat-toolbar color="primary">
+  <span class="spacer"></span>
+  <!-- Spacer to push buttons to the right -->
+  <button mat-button (click)="navigateToDashboard()">Dashboard</button>
+  <button mat-button (click)="handleSignOut()">Sign Out</button>
+</mat-toolbar>
+<div class="content">
+  <h2>User logged in successfully</h2>
+  <br />
+  <p>dashboard works!</p>
+  <ng-container *ngIf="userProfile">
+    <div>Welcome, {{ userProfile.name }}</div>
+    <!-- Display other user details as needed -->
+  </ng-container>
+</div>

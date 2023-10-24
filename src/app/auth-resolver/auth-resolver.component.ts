@@ -24,9 +24,9 @@ export class AuthResolverComponent implements OnInit {
           try {
             console.log('response', response[0]);
             this.googleAuthService.setAuthenticated(true);
-            this.router.navigate(['/dashboard'], {
-              state: { userProfile: response },
-            });
+            this.googleAuthService.setUserProfile(response[0]);
+            this.router.navigate(['/dashboard']);
+
             // Handle user data
           } catch (error) {
             console.error('Error parsing JSON response:', error);

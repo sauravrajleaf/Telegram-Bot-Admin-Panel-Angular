@@ -3,20 +3,32 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { EnvironmentService } from '../environment.service';
 // import { GoogleAuthService } from '../google-auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { GoogleAuthService } from '../google-auth.service';
 
 declare var google: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   constructor(
     // private googleAuthService: GoogleAuthService,
     private environmentService: EnvironmentService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService,
+    private googleAuthService: GoogleAuthService
   ) {}
+  // userProfile: any;
+
+  ngOnInit() {
+    // Clear cookies
+    this.cookieService.deleteAll();
+    // console.log('userProfile in login', this.userProfile);
+  }
 
   googleClientId(): string {
     return this.environmentService.googleClientId;

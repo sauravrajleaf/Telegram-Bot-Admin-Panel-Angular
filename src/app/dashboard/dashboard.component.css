@@ -1,0 +1,32 @@
+.content {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+}
+
+.mat-toolbar {
+  background-color: #2196F3;
+  color: white;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.spacer {
+  flex: 1; /* Takes up remaining space, pushing buttons to the right */
+}
+
+.mat-toolbar button {
+  color: white;
+  font-size: 16px;
+  margin-left: 16px; /* Add margin between buttons */
+  transition: color 0.3s ease;
+}
+
+.mat-toolbar button:hover {
+  color: #FFC107;
+  text-decoration: underline;
+  cursor: pointer;
+}

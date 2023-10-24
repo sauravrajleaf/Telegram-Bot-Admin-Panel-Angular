@@ -6,8 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GoogleAuthService {
-  private googleClientId = '';
-  private backendApiUrl = 'http://localhost:3000/auth/login';
+  // private googleClientId = '';
+  // private backendApiUrl = 'http://localhost:3000/auth/login';
 
   private isAuthenticatedSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
@@ -17,6 +17,24 @@ export class GoogleAuthService {
   constructor(private http: HttpClient) {}
 
   private apiUrl = 'http://localhost:3000/auth/authenticated-user'; // Adjust the API endpoint
+
+  private userProfile: any; // Private variable to store user data
+  private userProfileKey = 'userProfile';
+
+  setUserProfile(userProfile: any) {
+    this.userProfile = userProfile;
+    localStorage.setItem(this.userProfileKey, JSON.stringify(userProfile));
+  }
+
+  getUserProfile() {
+    const userProfileString = localStorage.getItem(this.userProfileKey);
+    return userProfileString ? JSON.parse(userProfileString) : null;
+  }
+
+  clearUserProfile() {
+    this.userProfile = null;
+    localStorage.removeItem(this.userProfileKey);
+  }
 
   getAuthenticatedUser(): Observable<any> {
     console.log('thissssssssssssss', this.http.get<any>(this.apiUrl));
